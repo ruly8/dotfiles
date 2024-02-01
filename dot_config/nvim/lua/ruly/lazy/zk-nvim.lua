@@ -9,8 +9,9 @@ return {
                     config = {
                         cmd = { "zk", "lsp" },
                         name = "zk",
-                        --on_attach = ...
-                        --etc
+                        on_attach = function()
+                            require("cmp_nvim_lsp").default_capabilities()
+                        end,
                     },
                     auto_attach = {
                         enabled = true,
