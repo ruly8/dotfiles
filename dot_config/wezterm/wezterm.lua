@@ -20,7 +20,8 @@ config.window_padding = {
 }
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Gruvbox dark, pale (base16)'
+--config.color_scheme = 'Gruvbox dark, pale (base16)'
+config.color_scheme = 'nord'
 
 config.hide_tab_bar_if_only_one_tab = true
 
