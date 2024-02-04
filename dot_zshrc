@@ -36,6 +36,7 @@ export TERM=xterm-256color
 # zk
 export ZK_NOTEBOOK_DIR=/home/ruly/test-zk
 # fzf
+export FZF_DEFAULT_OPTS='--color marker:#a3be8c,pointer:#bf616a,bg+:#232831 --reverse'
 [[ -f /usr/share/fzf/completion.zsh ]] &&  source /usr/share/fzf/completion.zsh
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 # starship
