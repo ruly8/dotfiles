@@ -3,10 +3,6 @@ if require("zk.util").notebook_root(vim.fn.expand('%:p')) ~= nil then
   local function map(...) vim.api.nvim_buf_set_keymap(0, ...) end
   local opts = { noremap=true, silent=false }
  
-    -- folding
-    vim.opt.foldmethod="expr"
-    vim.opt.foldexpr="nvim_treesitter#foldexpr()"
-    vim.opt.foldlevel=10
     -- Open the link under the caret.
     map("n", "<CR>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
   

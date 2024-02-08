@@ -1,5 +1,11 @@
 --local HOME = os.getenv("HOME")
 
+-- folding
+-- breaks when opening files with :Zk commands
+-- otherwise works pretty well
+vim.opt.foldmethod="expr"
+vim.opt.foldexpr="nvim_treesitter#foldexpr()"
+vim.opt.foldlevel=10
 
 -- basics
 vim.opt.encoding = "utf-8"
