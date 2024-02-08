@@ -1,7 +1,8 @@
 --local HOME = os.getenv("HOME")
 
 -- folding
--- breaks when opening files with :Zk commands
+-- tree-sitter sometimes doesnt load folds?
+-- :e or zx to fix?
 -- otherwise works pretty well
 vim.opt.foldmethod="expr"
 vim.opt.foldexpr="nvim_treesitter#foldexpr()"
