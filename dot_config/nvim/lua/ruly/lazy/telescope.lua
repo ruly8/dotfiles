@@ -1,3 +1,4 @@
+-- https://github.com/nvim-telescope/telescope-file-browser.nvim/issues/327
 local yank_filename = function()
     local entry = require("telescope.actions.state").get_selected_entry()
     local cb_opts = vim.opt.clipboard:get()
