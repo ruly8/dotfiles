@@ -1,3 +1,13 @@
+local yank_filename = function()
+    local entry = require("telescope.actions.state").get_selected_entry()
+    local cb_opts = vim.opt.clipboard:get()
+    if vim.tbl_contains(cb_opts, "unnamed") then vim.fn.setreg("*", entry.filename) end
+    if vim.tbl_contains(cb_opts, "unnamedplus") then
+        vim.fn.setreg("+", entry.filename)
+    end
+    vim.fn.setreg("", entry.filename)
+end
+
 return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
@@ -7,22 +17,22 @@ return {
     config = function()
         require("telescope").setup({
             defaults = {
-                --layout_strategy = "horizontal",
                 layout_strategy = "vertical",
                 layout_config = { 
                     --...
                 },
-                --probably want to set sorting_stratgey to ascending
-                -- with this aswell
-                --promp_position = "top",
             },
             pickers = {
-                --find_files = {
-                --    theme = "dropdown",
-                --},
-                --buffers = {
-                --    theme = "dropdown",
-                --},
+                live_grep = {
+                    mappings = {
+                        i = { ["<C-y>"] = yank_filename },
+                    },
+                },
+                find_files = {
+                    mappings = {
+                        i = { ["<C-y>"] = yank_filename },
+                    },
+                },
             },
         })
         require('telescope').load_extension('fzf')
