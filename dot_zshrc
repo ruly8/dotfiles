@@ -31,10 +31,13 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias cp='cp -i'
 alias ip='ip -color'
+alias fzfp="fzf --preview 'bat -p --color=always {}'"
 
 # Delete Key
 bindkey "^[[3~" delete-char
 
+# GOPATH
+#export GOPATH=
 # PATH
 path+=('/home/ruly/go/bin')
 export PATH

@@ -8,6 +8,9 @@ vim.opt.foldmethod="expr"
 vim.opt.foldexpr="nvim_treesitter#foldexpr()"
 vim.opt.foldlevel=10
 
+-- concealing
+vim.opt.conceallevel=0
+
 -- basics
 vim.opt.encoding = "utf-8"
 vim.opt.termguicolors = true
@@ -25,6 +28,7 @@ vim.opt.relativenumber = true
 
 
 -- white space
+vim.opt.list = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -50,8 +54,8 @@ vim.opt.smartcase = true
 
 
 --idk
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+--vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"

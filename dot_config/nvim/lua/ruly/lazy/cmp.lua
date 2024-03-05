@@ -16,14 +16,28 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
                 ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-                ["<TAB>"] = cmp.mapping.confirm({ select = true }), -- select = false to only confirm explicitly selected items
+                ["<TAB>"] = cmp.mapping.confirm({ select = true }),-- select = false to only confirm explicitly selected items
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "buffer" },
                 { name = "path"},
-            })
+            }),
+        })
+        cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = "path" }
+            }, {
+                    { name = "cmdline" }
+                })
+        })
+        cmp.setup.cmdline({ '/', '?' }, {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = 'buffer' }
+            }
         })
     end    
 }
