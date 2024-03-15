@@ -6,6 +6,8 @@ return {
         "hrsh7th/cmp-cmdline",
     	"hrsh7th/cmp-nvim-lsp",
     },
+    lazy = true,
+    event = "InsertEnter",
     config = function()
         local cmp = require("cmp")
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
