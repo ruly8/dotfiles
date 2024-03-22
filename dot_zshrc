@@ -21,8 +21,8 @@ bashcompinit
 
 # PROMPT
 #export PROMPT=$'%B%F{cyan}[%n@%m] %10~\n%(?.%F{green}❯.%F{red}❯)%f%b '
-export PROMPT=$'\n%B%F{cyan}%10~\n%(?.%F{green}❯.%F{red}❯)%f%b '
-
+export PROMPT=$'\n%B%F{cyan}%10~\n%(?.%F{green}$.%F{red}$)%f%b '
+# ❯
 
 # My manual changes
 #shopt -s histappend
