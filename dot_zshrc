@@ -1,3 +1,5 @@
+# Username for later
+USERNAME=$(whoami)
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_histfile
 # how many commands are loaded into memory
@@ -12,7 +14,7 @@ bindkey -e
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/ruly/.zshrc'
+zstyle :compinstall filename '/home/$USERNAME/.zshrc'
 
 autoload -Uz compinit bashcompinit
 compinit
@@ -45,11 +47,11 @@ bindkey "^[[3~" delete-char
 # GOPATH
 #export GOPATH=
 # PATH
-path+=('/home/ruly/go/bin')
+path+=('/home/$USERNAME/go/bin')
 export PATH
 export TERM=xterm-256color
 # zk
-export ZK_NOTEBOOK_DIR=/home/ruly/test-zk
+export ZK_NOTEBOOK_DIR=/home/$USERNAME/test-zk
 # fzf
 export FZF_DEFAULT_OPTS='--color marker:#a3be8c,pointer:#bf616a,bg+:#232831 --reverse'
 [[ -f /usr/share/fzf/completion.zsh ]] &&  source /usr/share/fzf/completion.zsh
