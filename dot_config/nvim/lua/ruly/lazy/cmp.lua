@@ -6,7 +6,7 @@ return {
         "hrsh7th/cmp-cmdline",
     	"hrsh7th/cmp-nvim-lsp",
     },
-    --lazy = true,
+    lazy = true,
     event = { "InsertEnter", "CmdlineEnter" },
     config = function()
         local cmp = require("cmp")

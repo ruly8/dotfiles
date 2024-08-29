@@ -47,7 +47,8 @@ bindkey "^[[3~" delete-char
 # GOPATH
 #export GOPATH=
 # PATH
-path+=('/home/$USERNAME/go/bin')
+path+=("/home/${USERNAME}/go/bin")
+#path+=("/home/${USERNAME}/_code/go")
 export PATH
 export TERM=xterm-256color
 # zk
