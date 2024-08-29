@@ -21,11 +21,34 @@ config.window_padding = {
 
 -- For example, changing the color scheme:
 --config.color_scheme = 'Gruvbox dark, pale (base16)'
-config.color_scheme = 'nord' -- or nordfox
+config.color_scheme = 'nordfox' -- or nordfox
 
 config.hide_tab_bar_if_only_one_tab = true
 
 config.initial_rows = 50
+
+-- Keybinds
+local act = wezterm.action
+config.leader = { key = 'b', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.keys = {
+    -- panes
+    {
+        mods = 'LEADER|SHIFT',
+        key = '%',
+        action = act.SplitVertical --{ domain = 'CurrentPaneDomain' },
+    },
+    {
+        mods = 'LEADER|SHIFT',
+        key = '"',
+        action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    },
+    -- window
+    {
+        mods = 'LEADER',
+        key = 'c',
+        action = act.SpawnTab 'CurrentPaneDomain',
+    },
+}
 
 -- and finally, return the configuration to wezterm
 return config
